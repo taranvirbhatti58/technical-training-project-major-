@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Explorer & Recommendation</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎬 Movie Explorer & Recommendation</h1>
+            <p class="subtitle">Discover and explore your favorite movies</p>
+        </header>
+
+        <main>
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-container">
+                    <input 
+                        type="text" 
+                        id="movieSearch" 
+                        class="search-input" 
+                        placeholder="Enter movie title..."
+                        autocomplete="off"
+                    >
+                    <button id="searchBtn" class="search-btn">Search</button>
+                </div>
+            </section>
+
+            <!-- Loading Spinner -->
+            <div id="loadingSpinner" class="loading-spinner hidden">
+                <div class="spinner"></div>
+                <p>Searching for movies...</p>
+            </div>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Sorting Controls -->
+            <section class="controls-section hidden" id="controlsSection">
+                <div class="sort-container">
+                    <label for="sortSelect">Sort by:</label>
+                    <select id="sortSelect" class="sort-select">
+                        <option value="default">Default</option>
+                        <option value="year-asc">Year (Oldest First)</option>
+                        <option value="year-desc">Year (Newest First)</option>
+                        <option value="rating-asc">Rating (Lowest First)</option>
+                        <option value="rating-desc">Rating (Highest First)</option>
+                    </select>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section">
+                <div id="resultsContainer" class="results-grid"></div>
+            </section>
+
+            <!-- Recommendations Section -->
+            <section class="recommendations-section hidden" id="recommendationsSection">
+                <h2>Similar Movies You Might Like</h2>
+                <div id="recommendationsContainer" class="results-grid"></div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Powered by OMDb API</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
